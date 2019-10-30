@@ -1,0 +1,59 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "homehelp": {
+      "root": "",
+      "sourceRoot": "src/main/webapp",
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true,
+          "style": "scss"
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "prefix": "jhi",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "assets": [
+              "src/main/webapp/content",
+              "src/main/webapp/favicon.ico"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/angular2-multiselect-dropdown/themes/default.theme.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "src/main/webapp/content/css/nucleo-icons.css",
+              "src/main/webapp/content/scss/paper-kit.scss",
+              "src/main/webapp/content/demo/demo.css",
+              "src/main/webapp/content/scss/paper-kit/_variables.scss"
+            ],
+            "scripts": [
+              "node_modules/rellax/rellax.min.js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "homehelp",
+  "cli": {
+    "packageManager": "npm"
+  }
+}
